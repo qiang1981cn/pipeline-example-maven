@@ -18,6 +18,12 @@ stages:
         echo bbb
     when:
       branch: {}
+  - runScriptConfig:
+      image: java:8
+      shellScript: |+
+        ls
+        pwd
+
 - name: Publish
   steps:
   - publishImageConfig:
