@@ -2,7 +2,7 @@ stages:
 - name: Build
   steps:
   - runScriptConfig:
-      image: maven:3-jdk-7
+      image: chengjianqiang/maven:3-j7-cached
       shellScript: |-
         mvn clean install
         echo aaa
