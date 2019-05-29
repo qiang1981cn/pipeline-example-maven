@@ -21,7 +21,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: example-greenhouse:${CICD_EXECUTION_SEQUENCE}
+      tag: chengjianqiang/example-greenhouse:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: index.docker.io
 - name: Deploy
