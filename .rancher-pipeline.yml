@@ -11,11 +11,9 @@ stages:
         echo aaa
   - runScriptConfig:
       image: java:8
-      shellScript: |-
+      shellScript: |
         echo bbb
         ls
-        pwd
-        echo bbb
     when:
       branch: {}
   - runScriptConfig:
