@@ -17,7 +17,7 @@ stages:
     when:
       branch: {}
   - runScriptConfig:
-      image: java:8
+      image: chengjianqiang/maven:3-j7-cached
       shellScript: |+
         ls
         pwd
