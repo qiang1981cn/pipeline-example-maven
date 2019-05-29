@@ -16,25 +16,13 @@ stages:
         ls
     when:
       branch: {}
-  - runScriptConfig:
-      image: chengjianqiang/maven:3-j7-cached
-      shellScript: |+
-        ls
-        pwd
-
 - name: Publish
   steps:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: example-greenhouse:${CICD_EXECUTION_SEQUENCE}
-  - runScriptConfig:
-      image: java:8
-      shellScript: |-
-        echo ccc
-        ls
-        pwd
-        echo ccc
+      registry: 127.0.0.1:34223
 - name: Deploy
   steps:
   - applyYamlConfig:
