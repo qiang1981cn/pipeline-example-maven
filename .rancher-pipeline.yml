@@ -26,11 +26,18 @@ stages:
       registry: index.docker.io
     env:
       DOCKER_HOST: tcp://docker-dind.default:2375
-      PLUGIN_DEAMON_OFF: true
+      PLUGIN_DEAMON_OFF: "true"
 - name: Deploy
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+  - applyAppConfig:
+      catalogTemplate: p-vzxmh:pipeline-chart-demo
+      version: 0.1.0
+      answers:
+        image.tag: ${CICD_EXECUTION_SEQUENCE}
+      name: pipeline-app
+      targetNamespace: pipeline
 timeout: 20
 branch: {}
 notification: {}
