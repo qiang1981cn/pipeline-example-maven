@@ -38,6 +38,8 @@ stages:
         image.tag: ${CICD_EXECUTION_SEQUENCE}
       name: pipeline-app
       targetNamespace: pipeline
+    env:
+      DEBUG: "true"
   - runScriptConfig:
       image: roffe/kubectl
       shellScript: kubectl  create deployment demo-$RANDOM  --image=nginx -n pipeline
