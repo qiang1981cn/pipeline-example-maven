@@ -24,6 +24,9 @@ stages:
       tag: chengjianqiang/example-greenhouse:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: index.docker.io
+    env:
+      DOCKER_HOST: tcp://docker-dind.default:2375
+      PLUGIN_DEAMON_OFF: true
 - name: Deploy
   steps:
   - applyYamlConfig:
