@@ -5,17 +5,7 @@ stages:
       image: chengjianqiang/maven:3-j7-cached-2
       shellScript: |-
         mvn clean install
-        echo aaa
-        ls
-        pwd
-        echo aaa
-  - runScriptConfig:
-      image: java:8
-      shellScript: |
-        echo bbb
-        ls
-    when:
-      branch: {}
+        echo build finished!
 - name: Publish
   steps:
   - publishImageConfig:
@@ -42,13 +32,13 @@ stages:
       DEBUG: "true"
   - runScriptConfig:
       image: roffe/kubectl
-      shellScript: kubectl  create deployment demo-$RANDOM  --image=nginx -n pipeline
+      shellScript: kubectl  create deployment demo-$RANDOM  --image=nginx -n kubectl-deploy
 timeout: 20
 branch: {}
 notification:
   recipients:
   - recipient: '#rancher-alert'
-    notifier: c-bb6fr:n-2rsrf
+    notifier: local:n-l9k9r
   condition:
   - Success
   - Changed
