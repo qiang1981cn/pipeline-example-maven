@@ -27,7 +27,7 @@ stages:
       answers:
         image.tag: ${CICD_EXECUTION_SEQUENCE}
       name: pipeline-app
-      targetNamespace: pipeline
+      targetNamespace: chart-deploy
     env:
       DEBUG: "true"
   - runScriptConfig:
