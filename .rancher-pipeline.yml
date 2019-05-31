@@ -38,7 +38,7 @@ branch: {}
 notification:
   recipients:
   - recipient: '#rancher-alert'
-    notifier: local:n-l9k9r
+    notifier: c-4m5g9:n-kkkwj
   condition:
   - Success
   - Changed
