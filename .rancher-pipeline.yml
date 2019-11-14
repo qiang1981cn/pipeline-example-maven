@@ -33,6 +33,11 @@ stages:
   - runScriptConfig:
       image: roffe/kubectl
       shellScript: kubectl  create deployment demo-$RANDOM  --image=nginx -n kubectl-deploy
+- name: test
+  steps:
+  - runScriptConfig:
+      image: java:8
+      shellScript: echo test
 timeout: 20
 branch: {}
 notification: {}
