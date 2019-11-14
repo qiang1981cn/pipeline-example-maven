@@ -35,11 +35,4 @@ stages:
       shellScript: kubectl  create deployment demo-$RANDOM  --image=nginx -n kubectl-deploy
 timeout: 20
 branch: {}
-notification:
-  recipients:
-  - recipient: '#rancher-alert'
-    notifier: c-4m5g9:n-kkkwj
-  condition:
-  - Success
-  - Changed
-  - Failed
+notification: {}
