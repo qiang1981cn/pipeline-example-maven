@@ -9,7 +9,7 @@ stages:
   - runScriptConfig:
       image: java:8
       shellScript: |-
-        echo aaa
+        echo check pod status
         exit -1
   - runScriptConfig:
       image: java:8
