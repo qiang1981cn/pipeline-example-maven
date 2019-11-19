@@ -6,6 +6,14 @@ stages:
       shellScript: |-
         mvn clean install
         echo build finished!
+  - runScriptConfig:
+      image: java:8
+      shellScript: |-
+        echo aaa
+        exit -1
+  - runScriptConfig:
+      image: java:8
+      shellScript: exit 0
 - name: Publish
   steps:
   - publishImageConfig:
@@ -35,11 +43,4 @@ stages:
       shellScript: kubectl  create deployment demo-$RANDOM  --image=nginx -n kubectl-deploy
 timeout: 20
 branch: {}
-notification:
-  recipients:
-  - recipient: '#rancher-alert'
-    notifier: c-4m5g9:n-kkkwj
-  condition:
-  - Success
-  - Changed
-  - Failed
+notification: {}
