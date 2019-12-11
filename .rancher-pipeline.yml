@@ -4,7 +4,8 @@ stages:
   - runScriptConfig:
       image: java:8
       shellScript: |-
-        echo check pod status
+        echo check the test result here...
+        echo if test fail just let the step failed by running exit...
         exit -1
 - name: Build
   steps:
