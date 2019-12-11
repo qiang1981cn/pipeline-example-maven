@@ -1,4 +1,11 @@
 stages:
+- name: Test
+  steps:
+  - runScriptConfig:
+      image: java:8
+      shellScript: |-
+        echo check pod status
+        exit -1
 - name: Build
   steps:
   - runScriptConfig:
